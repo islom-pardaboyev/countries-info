@@ -6,13 +6,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../components/ui/select";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 function Header() {
+  const { setDarkMode } = useContext(ThemeContext);
+
   return (
-    <header className="bg-white sticky dark:bg-dark top-0 z-10 shadow-md">
+    <header className="bg-white sticky dark:text-white dark:bg-dark_header top-0 z-10 shadow-md">
       <div className="container flex items-center justify-between">
-        <a href="/" className="font-extrabold text-2xl py-5">Where in the world?</a>
-        <Select>
+        <a href="/" className="font-extrabold text-2xl dark:text-white py-5">
+          Where in the world?
+        </a>
+        <Select onValueChange={(value) => setDarkMode(value as 'light' | 'dark' | 'system')}>
           <SelectTrigger className="w-[180px] border-none outline-none ring-0 focus:ring-0">
             <SelectValue placeholder="Theme" />
           </SelectTrigger>

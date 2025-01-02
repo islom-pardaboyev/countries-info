@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { SingleCountryContext } from "../../utils";
 
 function CountryCard(country: SingleCountryContext) {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div
       onClick={() => navigate(`/${country.name.common}`)}
-      className="rounded-lg cursor-pointer hover:shadow-md hover:scale-110 duration-300 bg-white overflow-hidden"
+      className="rounded-lg cursor-pointer hover:shadow-md hover:scale-110 duration-300 dark:bg-dark_header dark:text-white bg-white overflow-hidden"
     >
       <img
         className="w-full h-[400px] md:h-[200px] md:object-cover"

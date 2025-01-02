@@ -4,7 +4,7 @@ import Header from "../components/header/Header";
 
 function CustomRoutes() {
   return (
-    <main>
+    <main className="transition-all">
       <Header />
       {useRoutes([
         {

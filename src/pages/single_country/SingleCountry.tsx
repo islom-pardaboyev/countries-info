@@ -16,7 +16,7 @@ function SingleCountry() {
   };
   console.log(data);
   return (
-    <section className="w-full h-screen bg-white_background absolute top-0 left-0 flex items-center justify-center">
+    <section className="w-full h-screen dark:bg-dark_background bg-white_background absolute top-0 left-0 flex items-center justify-center">
       {isLoading && (
         <l-dot-stream size="100" speed="2.5" color="black"></l-dot-stream>
       )}
@@ -24,7 +24,7 @@ function SingleCountry() {
         <div className="container">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 mb-20 bg-white rounded-md shadow-lg px-8 py-2"
+            className="flex items-center gap-2 mb-20 dark:bg-dark_header dark:text-white bg-white rounded-md shadow-lg px-8 py-2"
           >
             <MoveLeft />
             Back
@@ -37,7 +37,7 @@ function SingleCountry() {
                 alt=""
               />
             </Zoom>
-            <div>
+            <div className="dark:text-white">
               <h1 className="text-3xl font-extrabold">{data[0].name.common}</h1>
               <div className="grid grid-cols-1 lg:grid-cols-2 my-20 items-center justify-between">
                 <div className="flex flex-col gap-2">

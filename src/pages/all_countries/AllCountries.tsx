@@ -57,21 +57,21 @@ function AllCountries() {
 
   console.log(dataForShow);
   return (
-    <section className="bg-white_background w-full h-screen overflow-y-auto">
+    <section className="bg-white_background dark:bg-dark_background w-full h-screen overflow-y-auto">
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-0 justify-between my-10">
-          <div className="flex items-center bg-white gap-1 py-2 px-3 rounded-md">
-            <Search />
+          <div className="flex items-center dark:bg-dark_header bg-white gap-1 py-2 px-3 rounded-md">
+            <Search className="dark:text-white" />
             <Input
               onInput={(e: ChangeEvent<HTMLInputElement>) =>
                 setCountryName(e.target.value)
               }
-              className="focus-visible:ring-0 outline-none ring-0 border-none"
+              className="focus-visible:ring-0 dark:text-white outline-none w-[500px] ring-0 border-none"
               placeholder="Search for a country"
             />
           </div>
           <Select onValueChange={(e) => setRegionName(e)}>
-            <SelectTrigger className="w-[180px] border-none outline-none ring-0 focus:ring-0">
+            <SelectTrigger className="w-[180px] text-black dark:text-white border-none outline-none ring-0 focus:ring-0">
               <SelectValue placeholder="Filter by Regions" />
             </SelectTrigger>
             <SelectContent>
