@@ -55,7 +55,6 @@ function AllCountries() {
     }
   }, [countryName]);
 
-  console.log(dataForShow);
   return (
     <section className="bg-white_background dark:bg-dark_background w-full h-screen overflow-y-auto">
       <div className="container">

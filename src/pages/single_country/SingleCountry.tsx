@@ -10,15 +10,12 @@ dotStream.register();
 
 function SingleCountry() {
   const {darkMode} = useContext(ThemeContext)
-  console.log(darkMode)
   const navigate = useNavigate();
   const { name } = useParams();
-  console.log(name);
   const { data, isLoading } = useGetCountryByNameQuery(name) as {
     data: SingleCountryContext[];
     isLoading: boolean;
   };
-  console.log(data);
   return (
     <section className="w-full h-screen dark:bg-dark_background bg-white_background absolute top-0 left-0 flex items-center justify-center">
       {isLoading && (
