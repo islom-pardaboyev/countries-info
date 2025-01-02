@@ -4,9 +4,13 @@ import { MoveLeft } from "lucide-react";
 import { SingleCountryContext } from "../../utils";
 import Zoom from "react-medium-image-zoom";
 import { dotStream } from "ldrs";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 dotStream.register();
 
 function SingleCountry() {
+  const {darkMode} = useContext(ThemeContext)
+  console.log(darkMode)
   const navigate = useNavigate();
   const { name } = useParams();
   console.log(name);
@@ -18,7 +22,7 @@ function SingleCountry() {
   return (
     <section className="w-full h-screen dark:bg-dark_background bg-white_background absolute top-0 left-0 flex items-center justify-center">
       {isLoading && (
-        <l-dot-stream size="100" speed="2.5" color="black"></l-dot-stream>
+        <l-dot-stream size="100" speed="2.5" color={darkMode === 'dark' ? '#fff' : '#000'}></l-dot-stream>
       )}
       {data && (
         <div className="container">
